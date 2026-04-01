@@ -1,0 +1,7 @@
+# .gitignore
+*.o
+*.exe
+*.out
+*.cpp~
+*.h~
+.DS_Store

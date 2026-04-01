@@ -1,0 +1,10 @@
+// file_io.h
+#ifndef FILE_IO_H
+#define FILE_IO_H
+
+#include <string>
+
+void readFile(const std::string &filename);
+void writeFile(const std::string &filename, const std::string &data);
+
+#endif // FILE_IO_H

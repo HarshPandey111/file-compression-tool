@@ -1,14 +1,11 @@
-CXX = g++
-CXXFLAGS = -std=c++17 -Wall -O2
-SRC = src/main.cpp src/file_io.cpp src/rle_compressor.cpp src/huffman_compressor.cpp
-TARGET = compressor
+# Makefile
+CC=g++
+CFLAGS=-c -Wall
 
-all: $(TARGET)
+all: FileCompressionTool
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+FileCompressionTool: main.o file_io.o rle_compressor.o huffman_compressor.o
+	$(CC) -o FileCompressionTool main.o file_io.o rle_compressor.o huffman_compressor.o
 
-clean:
-	rm -f $(TARGET)
-
-.PHONY: all clean
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
